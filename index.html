@@ -670,8 +670,7 @@
 
         <div class="contact-form-wrapper">
           <h3>Get In Touch</h3>
-          <!-- To enable form submissions, sign up at https://formspree.io and replace YOUR_FORM_ID below -->
-          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <form id="contact-form" action="https://formspree.io/ashley@cedarwaxwingproductions.com" method="POST">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required autocomplete="name">
@@ -716,8 +715,6 @@
     const successMsg = document.getElementById('form-success');
 
     form.addEventListener('submit', async function(e) {
-      // Only intercept if a real Formspree ID is set
-      if (form.action.includes('YOUR_FORM_ID')) return;
       e.preventDefault();
       const data = new FormData(form);
       try {
