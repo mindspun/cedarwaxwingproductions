@@ -231,41 +231,32 @@
     }
 
     /* ── ABOUT ── */
-    .about-grid {
+    .about-circles {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      text-align: center;
     }
 
-    .about-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
+    .about-circle-img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 24px;
+      display: block;
     }
 
     .about-card h4 {
       font-size: 1.25rem;
       color: var(--primary);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .about-card p {
       color: var(--medium-text);
       font-size: 1rem;
       line-height: 1.7;
-    }
-
-    .about-img {
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-    }
-
-    .about-img img {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
     }
 
     /* ── SERVICES ── */
@@ -278,7 +269,7 @@
     .service-card {
       background: var(--white);
       border-radius: 6px;
-      overflow: hidden;
+      padding: 28px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.08);
       transition: transform 0.2s, box-shadow 0.2s;
     }
@@ -288,23 +279,13 @@
       box-shadow: 0 10px 28px rgba(0,0,0,0.14);
     }
 
-    .service-card-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .service-card-body {
-      padding: 24px;
-    }
-
-    .service-card-body h4 {
+    .service-card h4 {
       font-size: 1.2rem;
       color: var(--primary);
       margin-bottom: 10px;
     }
 
-    .service-card-body p {
+    .service-card p {
       color: var(--medium-text);
       font-size: 0.95rem;
       line-height: 1.65;
@@ -482,13 +463,15 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .about-grid,
+      .about-circles {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
+      }
+
       .contact-grid {
         grid-template-columns: 1fr;
       }
-
-      .about-img { order: -1; }
-      .about-img img { height: 320px; }
 
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -496,6 +479,8 @@
     }
 
     @media (max-width: 640px) {
+      .about-circles { grid-template-columns: 1fr; }
+
       .services-grid {
         grid-template-columns: 1fr;
       }
@@ -554,24 +539,22 @@
   <!-- ABOUT -->
   <section class="section section-white" id="about">
     <div class="container">
-      <h2 class="section-title" style="margin-bottom:48px;">About Cedar Waxwing Productions</h2>
-      <div class="about-grid">
-        <div class="about-cards">
-          <div class="about-card">
-            <h4>Our Story</h4>
-            <p>Founded in 2023, Cedar Waxwing Productions was born out of a desire to help small businesses navigate the complex world of digital marketing. Since then, we've helped hundreds of businesses grow their online presence and achieve their marketing goals.</p>
-          </div>
-          <div class="about-card">
-            <h4>Our Philosophy</h4>
-            <p>At Cedar Waxwing Productions, we believe that internet marketing should be accessible to every business, regardless of size or budget. That's why we offer affordable, customizable solutions that deliver real results.</p>
-          </div>
-          <div class="about-card">
-            <h4>Why CWP?</h4>
-            <p>From SEO to social media management to PPC advertising, we offer a full range of internet marketing services designed to help your business succeed online.</p>
-          </div>
+      <h2 class="section-title" style="text-align:center; margin-bottom:48px;">About Cedar Waxwing Productions</h2>
+      <div class="about-circles">
+        <div class="about-card">
+          <img class="about-circle-img" src="/images/service1.jpg" alt="Our Story" loading="lazy">
+          <h4>Our Story</h4>
+          <p>Founded in 2023, Cedar Waxwing Productions was born out of a desire to help small businesses navigate the complex world of digital marketing. Since then, we've helped hundreds of businesses grow their online presence and achieve their marketing goals.</p>
         </div>
-        <div class="about-img">
-          <img src="/images/about.jpg" alt="Digital marketing team at work" loading="lazy">
+        <div class="about-card">
+          <img class="about-circle-img" src="/images/service2.jpg" alt="Our Philosophy" loading="lazy">
+          <h4>Our Philosophy</h4>
+          <p>At Cedar Waxwing Productions, we believe that internet marketing should be accessible to every business, regardless of size or budget. That's why we offer affordable, customizable solutions that deliver real results.</p>
+        </div>
+        <div class="about-card">
+          <img class="about-circle-img" src="/images/service3.jpg" alt="Why CWP?" loading="lazy">
+          <h4>Why CWP?</h4>
+          <p>From SEO to social media management to PPC advertising, we offer a full range of internet marketing services designed to help your business succeed online.</p>
         </div>
       </div>
     </div>
@@ -586,51 +569,33 @@
       <div class="services-grid">
 
         <div class="service-card">
-          <img class="service-card-img" src="/images/service1.jpg" alt="Web Design & Development" loading="lazy">
-          <div class="service-card-body">
-            <h4>Web Design &amp; Development</h4>
-            <p>We create custom websites tailored to your business needs. From design to development, we build websites that look great and perform even better.</p>
-          </div>
+          <h4>Web Design &amp; Development</h4>
+          <p>We create custom websites tailored to your business needs. From design to development, we build websites that look great and perform even better.</p>
         </div>
 
         <div class="service-card">
-          <img class="service-card-img" src="/images/service2.jpg" alt="Local SEO" loading="lazy">
-          <div class="service-card-body">
-            <h4>Local SEO</h4>
-            <p>Get found by local customers in your area. Our team will optimize your website and local listings to increase your online visibility.</p>
-          </div>
+          <h4>Local SEO</h4>
+          <p>Get found by local customers in your area. Our team will optimize your website and local listings to increase your online visibility.</p>
         </div>
 
         <div class="service-card">
-          <img class="service-card-img" src="/images/service3.jpg" alt="Online Advertising" loading="lazy">
-          <div class="service-card-body">
-            <h4>Online Advertising</h4>
-            <p>Maximize your online reach with our online advertising services. We create and manage your ads on Google, Facebook, and other platforms.</p>
-          </div>
+          <h4>Online Advertising</h4>
+          <p>Maximize your online reach with our online advertising services. We create and manage your ads on Google, Facebook, and other platforms.</p>
         </div>
 
         <div class="service-card">
-          <img class="service-card-img" src="/images/service1.jpg" alt="Social Media Management" loading="lazy">
-          <div class="service-card-body">
-            <h4>Social Media Management</h4>
-            <p>Build brand awareness and engage with your audience on social media. Our team will create and manage your social media accounts to grow your online presence.</p>
-          </div>
+          <h4>Social Media Management</h4>
+          <p>Build brand awareness and engage with your audience on social media. Our team will create and manage your social media accounts to grow your online presence.</p>
         </div>
 
         <div class="service-card">
-          <img class="service-card-img" src="/images/service2.jpg" alt="Content Marketing" loading="lazy">
-          <div class="service-card-body">
-            <h4>Content Marketing</h4>
-            <p>Connect with your audience through valuable content. Our team will create a content strategy that drives traffic, leads, and sales to your business.</p>
-          </div>
+          <h4>Content Marketing</h4>
+          <p>Connect with your audience through valuable content. Our team will create a content strategy that drives traffic, leads, and sales to your business.</p>
         </div>
 
         <div class="service-card">
-          <img class="service-card-img" src="/images/service3.jpg" alt="E-commerce Solutions" loading="lazy">
-          <div class="service-card-body">
-            <h4>E-commerce Solutions</h4>
-            <p>Sell your products online and reach more customers with an e-commerce website. Our team will create a customized solution that meets your business needs.</p>
-          </div>
+          <h4>E-commerce Solutions</h4>
+          <p>Sell your products online and reach more customers with an e-commerce website. Our team will create a customized solution that meets your business needs.</p>
         </div>
 
       </div>
