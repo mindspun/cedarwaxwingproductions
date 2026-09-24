@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-US">
 <head>
   <meta charset="utf-8">
@@ -63,20 +63,25 @@
       padding: 0 24px;
     }
 
-    /* ── HEADER ── */
+    /* â”€â”€ HEADER â”€â”€ */
     .site-header {
       background: var(--white);
       padding: 16px 24px;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-bottom: 1px solid var(--border);
     }
+
+    .site-header a { display: flex; }
 
     .site-header img {
       height: 75px;
       width: auto;
+      display: block;
     }
 
-    /* ── HERO ── */
+    /* â”€â”€ HERO â”€â”€ */
     .hero {
       position: relative;
       min-height: 480px;
@@ -90,8 +95,8 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: url('/images/hero.jpg') center center / cover no-repeat;
-      filter: brightness(0.45);
+      background: url('images/hero.jpg') center center / cover no-repeat;
+      filter: brightness(0.5);
       z-index: 0;
     }
 
@@ -99,45 +104,45 @@
       position: relative;
       z-index: 1;
       color: var(--white);
-      max-width: 820px;
+      max-width: 700px;
       padding: 60px 24px;
     }
 
     .hero-content h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      margin-bottom: 20px;
-      letter-spacing: 1px;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      margin-bottom: 16px;
+      letter-spacing: 2px;
       text-transform: uppercase;
+      line-height: 1.2;
     }
 
     .hero-content p {
-      font-size: clamp(1rem, 2vw, 1.3rem);
-      margin-bottom: 36px;
-      opacity: 0.92;
-      max-width: 580px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 1rem;
+      margin-bottom: 28px;
+      opacity: 0.9;
     }
 
     .btn-primary {
       display: inline-block;
-      background: var(--primary);
+      background: transparent;
       color: var(--white);
-      padding: 14px 36px;
-      border-radius: 4px;
-      font-family: 'Fjalla One', sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: 1px;
+      padding: 11px 32px;
+      border: 2px solid var(--white);
+      border-radius: 2px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      transition: background 0.2s, transform 0.2s;
+      transition: background 0.2s, color 0.2s;
     }
 
     .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
+      background: var(--white);
+      color: var(--primary);
     }
 
-    /* ── SECTION COMMON ── */
+    /* â”€â”€ SECTION COMMON â”€â”€ */
     .section {
       padding: 80px 0;
     }
@@ -166,7 +171,7 @@
       margin-bottom: 40px;
     }
 
-    /* ── ABOUT ── */
+    /* â”€â”€ ABOUT â”€â”€ */
     .about-circles {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -196,7 +201,7 @@
       line-height: 1.7;
     }
 
-    /* ── SERVICES ── */
+    /* â”€â”€ SERVICES â”€â”€ */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -228,7 +233,7 @@
       line-height: 1.65;
     }
 
-    /* ── CONTACT ── */
+    /* â”€â”€ CONTACT â”€â”€ */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1.4fr;
@@ -361,7 +366,7 @@
       font-size: 0.95rem;
     }
 
-    /* ── FOOTER ── */
+    /* â”€â”€ FOOTER â”€â”€ */
     .site-footer {
       background: #012d46;
       color: var(--white);
@@ -413,7 +418,7 @@
 
     .footer-linkedin:hover svg { opacity: 1; }
 
-    /* ── RESPONSIVE ── */
+    /* â”€â”€ RESPONSIVE â”€â”€ */
     @media (max-width: 900px) {
       .about-circles {
         grid-template-columns: 1fr;
@@ -448,7 +453,7 @@
   <!-- HEADER -->
   <header class="site-header">
     <a href="/">
-      <img src="/images/logo.png" alt="Cedar Waxwing Productions">
+      <img src="images/logo.png" alt="Cedar Waxwing Productions">
     </a>
   </header>
 
@@ -468,17 +473,17 @@
       <h2 class="section-title" style="text-align:center; margin-bottom:48px;">About Cedar Waxwing Productions</h2>
       <div class="about-circles">
         <div class="about-card">
-          <img class="about-circle-img" src="/images/service1.jpg" alt="Our Story" loading="lazy">
+          <img class="about-circle-img" src="images/service1.jpg" alt="Our Story" loading="lazy">
           <h4>Our Story</h4>
           <p>Founded in 2023, Cedar Waxwing Productions was born out of a desire to help small businesses navigate the complex world of digital marketing. Since then, we've helped hundreds of businesses grow their online presence and achieve their marketing goals.</p>
         </div>
         <div class="about-card">
-          <img class="about-circle-img" src="/images/service2.jpg" alt="Our Philosophy" loading="lazy">
+          <img class="about-circle-img" src="images/service2.jpg" alt="Our Philosophy" loading="lazy">
           <h4>Our Philosophy</h4>
           <p>At Cedar Waxwing Productions, we believe that internet marketing should be accessible to every business, regardless of size or budget. That's why we offer affordable, customizable solutions that deliver real results.</p>
         </div>
         <div class="about-card">
-          <img class="about-circle-img" src="/images/service3.jpg" alt="Why CWP?" loading="lazy">
+          <img class="about-circle-img" src="images/service3.jpg" alt="Why CWP?" loading="lazy">
           <h4>Why CWP?</h4>
           <p>From SEO to social media management to PPC advertising, we offer a full range of internet marketing services designed to help your business succeed online.</p>
         </div>
@@ -628,3 +633,4 @@
 
 </body>
 </html>
+
