@@ -63,90 +63,23 @@
       padding: 0 24px;
     }
 
-    /* ── NAV ── */
-    .site-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: transparent;
-      transition: background 0.3s;
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--white);
+      padding: 16px 24px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
     }
 
-    .site-nav.scrolled {
-      background: rgba(2, 83, 126, 0.97);
-    }
-
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo img {
+    .site-header img {
       height: 75px;
       width: auto;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--white);
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      transition: opacity 0.2s;
-    }
-
-    .nav-links a:hover { opacity: 0.8; }
-
-    .btn-nav {
-      background: var(--white);
-      color: var(--primary) !important;
-      padding: 10px 24px;
-      border-radius: 4px;
-      font-weight: 700 !important;
-      transition: background 0.2s, color 0.2s !important;
-    }
-
-    .btn-nav:hover {
-      background: rgba(255,255,255,0.9) !important;
-      opacity: 1 !important;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--white);
-      transition: all 0.3s;
     }
 
     /* ── HERO ── */
     .hero {
       position: relative;
-      min-height: 100vh;
+      min-height: 480px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -167,7 +100,7 @@
       z-index: 1;
       color: var(--white);
       max-width: 820px;
-      padding: 120px 24px 80px;
+      padding: 60px 24px;
     }
 
     .hero-content h1 {
@@ -504,23 +437,6 @@
         grid-template-columns: 1fr;
       }
 
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: var(--primary);
-        flex-direction: column;
-        padding: 24px;
-        gap: 20px;
-        border-top: 1px solid rgba(255,255,255,0.1);
-      }
-
-      .nav-links.open { display: flex; }
-
-      .nav-toggle { display: flex; }
-
       .contact-form-wrapper { padding: 28px 20px; }
 
       .footer-inner { flex-direction: column; text-align: center; }
@@ -529,21 +445,12 @@
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="site-nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo" aria-label="Cedar Waxwing Productions">
-        <img src="/images/logo.png" alt="Cedar Waxwing Productions">
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="#contact" class="btn-nav">Get Started</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="/">
+      <img src="/images/logo.png" alt="Cedar Waxwing Productions">
+    </a>
+  </header>
 
   <!-- HERO -->
   <section class="hero" id="home">
@@ -698,12 +605,6 @@
   </footer>
 
   <script>
-    // Nav becomes solid after scrolling past hero
-    const nav = document.querySelector('.site-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 80);
-    });
-
     // Formspree AJAX submit
     const form = document.getElementById('contact-form');
     const successMsg = document.getElementById('form-success');
