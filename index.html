@@ -70,10 +70,12 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(2, 83, 126, 0.95);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      background: transparent;
       transition: background 0.3s;
+    }
+
+    .site-nav.scrolled {
+      background: rgba(2, 83, 126, 0.97);
     }
 
     .nav-inner {
@@ -172,6 +174,7 @@
       font-size: clamp(2.2rem, 5vw, 4rem);
       margin-bottom: 20px;
       letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .hero-content p {
@@ -383,13 +386,12 @@
     }
 
     .btn-submit {
-      width: 100%;
       background: var(--primary);
       color: var(--white);
       border: none;
-      padding: 14px;
+      padding: 12px 28px;
       font-family: 'Fjalla One', sans-serif;
-      font-size: 1.05rem;
+      font-size: 1rem;
       letter-spacing: 1px;
       text-transform: uppercase;
       border-radius: 4px;
@@ -398,6 +400,22 @@
     }
 
     .btn-submit:hover { background: var(--primary-dark); }
+
+    .btn-cancel {
+      background: transparent;
+      color: var(--medium-text);
+      border: 1.5px solid var(--border);
+      padding: 12px 28px;
+      font-family: 'Fjalla One', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-cancel:hover { border-color: #aaa; color: var(--dark-text); }
 
     .form-success {
       display: none;
@@ -651,8 +669,8 @@
               <textarea id="message" name="message" placeholder="Message" rows="6"></textarea>
             </div>
             <div style="display:flex;gap:12px;">
-              <button type="submit" class="btn-submit" style="flex:1;">Send</button>
-              <button type="reset" class="btn-submit" style="flex:0 0 auto;background:#888;">Cancel</button>
+              <button type="submit" class="btn-submit">Send</button>
+              <button type="reset" class="btn-cancel">Cancel</button>
             </div>
             <div class="form-success" id="form-success">Thank you! Your message has been sent. We'll be in touch soon.</div>
           </form>
@@ -680,6 +698,12 @@
   </footer>
 
   <script>
+    // Nav becomes solid after scrolling past hero
+    const nav = document.querySelector('.site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
+    });
+
     // Formspree AJAX submit
     const form = document.getElementById('contact-form');
     const successMsg = document.getElementById('form-success');
