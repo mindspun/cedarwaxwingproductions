@@ -95,20 +95,16 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: url('images/hero.jpg') center center / cover no-repeat;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background:
+        linear-gradient(rgba(2, 83, 126, 0.72), rgba(2, 83, 126, 0.72)),
+        url('images/hero.jpg') center center / cover no-repeat;
       z-index: 0;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(2, 83, 126, 0.72);
-      z-index: 1;
     }
 
     .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 1;
       color: var(--white);
       max-width: 700px;
       padding: 60px 24px;
@@ -466,7 +462,6 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Boost Your Online Presence Today</h1>
       <p>We are the leading agency for SEO and digital marketing services.</p>
