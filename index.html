@@ -237,10 +237,7 @@
 
     /* â”€â”€ CONTACT â”€â”€ */
     .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 60px;
-      align-items: start;
+      max-width: 600px;
     }
 
     .contact-info h2 {
@@ -567,27 +564,6 @@
           </div>
         </div>
 
-        <div class="contact-form-wrapper">
-          <h3>Get In Touch</h3>
-          <form id="contact-form" action="mailto:ashley@cedarwaxwingproductions.com" method="POST" enctype="text/plain">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required autocomplete="name">
-            </div>
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required autocomplete="email">
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Message" rows="6"></textarea>
-            </div>
-            <div style="display:flex;gap:12px;">
-              <button type="submit" class="btn-submit">Send</button>
-              <button type="reset" class="btn-cancel">Cancel</button>
-            </div>
-          </form>
-        </div>
 
       </div>
     </div>
